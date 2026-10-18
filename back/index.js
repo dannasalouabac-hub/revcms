@@ -26,3 +26,11 @@ async function connectDb () {
     }
 }
 connectDb();
+const port = process.env.PORT || 5000;
+app.listen(port, (err) => {
+    if (err) {
+        console.error("Erreur lors du démarrage du serveur :", err);
+    } else {
+        console.log("Serveur en écoute sur http://localhost:" + port);
+    }
+});
